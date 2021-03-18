@@ -63,7 +63,7 @@ public class FileUploadServiceImpl implements FileUploadService {
     }
 
     private List<String> processAndGetLinesAsList(String string) {
-
+    	System.out.println("processAndGetLinesAsList:\n"+string);
         Supplier<Stream<String>> streamSupplier = string::lines;
         var isFileOk = streamSupplier.get().allMatch(line -> line.matches(MultipartFileUploadUtils.REGEX_RULES));
 
